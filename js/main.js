@@ -17,10 +17,9 @@ if (b > a) {
       }
       sumOfFactorials += res;
     }
+    alert(`Sum of factorial as to task is ${sumOfFactorials} ! Hooray!`);
   } else
     alert(
       `B and H should be greater than 0, A should not be negative! Please, try one more time... :(`
     );
 } else alert(`"B" should be greater than "A"! :(`);
-
-alert(`Sum of factorial as to task is ${sumOfFactorials} ! Hooray!`);
