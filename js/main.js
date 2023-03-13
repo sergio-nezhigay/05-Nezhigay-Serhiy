@@ -1,20 +1,23 @@
-const a = +prompt(`Enter a non-negative "A" value:`);
-const b = +prompt(`Enter a "B" value greater than "A":`);
-const h = +prompt(`Enter a positive "H" value:`);
-
+let a, b, h;
 let sumOfFactorials = 0;
+do {
+  a = +prompt(`Enter a non-negative "A" value:`);
+  console.log("🚀 ~ file: main.js:6 ~ a:", a);
+} while (isNaN(a) || a < 0);
 
-if (b <= a) {
-  alert(`"B" should be greater than "A"!`);
-} else if (h <= 0 || a < 0 || b < 0) {
-  alert(`"A" should be non-negative, "B" and "H" should be positive!`);
-} else {
-  for (let i = a; i <= b; i += h) {
-    let res = 1;
-    for (j = 1; j <= i; j++) {
-      res *= j;
-    }
-    sumOfFactorials += res;
+do {
+  b = +prompt(`Enter a "B" value greater than "A":`);
+} while (isNaN(b) || b <= a);
+
+do {
+  h = +prompt(`Enter a positive "H" value:`);
+} while (isNaN(h) || h <= 0);
+
+for (a; a <= b; a += h) {
+  let res = 1;
+  for (j = 1; j <= a; j++) {
+    res *= j;
   }
-  alert(`The sum of factorials is ${sumOfFactorials}!`);
+  sumOfFactorials += res;
 }
+alert(`The sum of factorials is ${sumOfFactorials}!`);
